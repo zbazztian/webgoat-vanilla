@@ -4,7 +4,6 @@ on:
   push:
     branches: [ "develop" ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ "develop" ]
   schedule:
     - cron: '36 3 * * 2'
@@ -22,8 +21,6 @@ jobs:
       fail-fast: false
       matrix:
         language: [ 'java', 'javascript' ]
-        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
-        # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:
     - name: Checkout repository
@@ -35,21 +32,20 @@ jobs:
         java-package: jdk
         architecture: x64
       if: matrix.language == 'java'
-      
+
     - name: Delombok
       uses: zbazztian/delombok@main
       if: matrix.language == 'java'
 
-    # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        queries: security-and-quality
-        
+        queries: security-and-quality,zbazztian/poc-setups/suites/java-security-experimental.qls@main,zbazztian/poc-setups/suites/java-security-recommendation.qls@main
+
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
-      if: matrix.language == 'javascript'
+      if: matrix.language == 'java'
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
