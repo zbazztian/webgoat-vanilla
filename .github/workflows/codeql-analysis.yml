@@ -41,7 +41,7 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        queries: security-and-quality,zbazztian/poc-setups/suites/java-security-experimental.qls@main,zbazztian/poc-setups/suites/java-security-recommendation.qls@main
+        queries: security-and-quality,zbazztian/poc-setups/suites/java-security-experimental.qls@main,zbazztian/poc-setups/suites/java-security-recommendation.qls@main,zbazztian/poc-setups/suites/javascript-security-experimental.qls@main,zbazztian/poc-setups/suites/javascript-security-recommendation.qls@main
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
