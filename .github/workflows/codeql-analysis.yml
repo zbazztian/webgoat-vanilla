@@ -20,7 +20,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'java', 'javascript' ]
+        language: [ 'java' ]
+        #language: [ 'java', 'javascript' ]
 
     steps:
     - name: Checkout repository
@@ -41,10 +42,11 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        queries: >
-          security-and-quality,
-          zbazztian/poc-setups/suites/java-security-all.qls@main,
-          zbazztian/poc-setups/suites/javascript-security-all.qls@main
+        config-file: .github/codeql-config.yml
+#        queries: >
+#          security-and-quality,
+#          zbazztian/poc-setups/suites/java-security-all.qls@main,
+#          zbazztian/poc-setups/suites/javascript-security-all.qls@main
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2

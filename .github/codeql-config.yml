@@ -1,0 +1,7 @@
+name: "My CodeQL config"
+
+disable-default-queries: true
+
+packs:
+  java:
+    - ghas-trials/java-queries:codeql-suites/java-security-and-quality.qls
