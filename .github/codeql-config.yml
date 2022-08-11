@@ -8,5 +8,5 @@ packs:
     #- ghas-trials/java-queries:codeql-suites/java-security-and-quality.qls
     #- ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
 queries:
-  - uses: java-security-and-quality
-  - uses: java-security-experimental
+  - uses: ghas-trials/java-queries:java-security-and-quality
+  - uses: ghas-trials/java-queries:java-security-experimental
