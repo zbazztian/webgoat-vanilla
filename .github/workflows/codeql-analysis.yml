@@ -34,9 +34,9 @@ jobs:
         architecture: x64
       if: matrix.language == 'java'
 
-#    - name: Delombok
-#      uses: zbazztian/delombok@main
-#      if: matrix.language == 'java'
+    - name: Delombok
+      uses: zbazztian/delombok@main
+      if: matrix.language == 'java'
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
