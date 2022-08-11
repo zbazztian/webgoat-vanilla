@@ -6,3 +6,5 @@ packs:
   java:
     - ghas-trials/java-queries:codeql-suites/java-security-and-quality.qls
     - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
+  javascript:
+    - codeql/javascript-queries:codeql-suites/javascript-security-and-quality.qls
