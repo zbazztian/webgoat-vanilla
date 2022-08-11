@@ -4,7 +4,5 @@ disable-default-queries: true
 
 packs:
   java:
-    - ghas-trials/java-queries:java-security-and-quality
-    - ghas-trials/java-queries:java-security-experimental
-    #- ghas-trials/java-queries:codeql-suites/java-security-and-quality.qls
-    #- ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
+    - ghas-trials/java-queries:codeql-suites/java-security-and-quality.qls
+    - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
