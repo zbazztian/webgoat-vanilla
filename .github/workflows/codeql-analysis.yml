@@ -42,7 +42,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         debug: true
-        config-file: ghas-trials/poc-queries/disable-default-queries.yml@main
+        config-file: ghas-trials/poc-queries/config/disable-default-queries.yml@main
         packs: >
           ghas-trials/${{ matrix.language }}-queries:codeql-suites/${{ matrix.language }}-security-all.qls,
           ghas-trials/${{ matrix.language }}-queries:codeql-suites/${{ matrix.language }}-security-experimental.qls
