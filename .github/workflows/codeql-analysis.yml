@@ -43,11 +43,13 @@ jobs:
         languages: ${{ matrix.language }}
         debug: true
         config-file: .github/codeql-config.yml
-
-#        queries: >
-#          security-and-quality,
-#          zbazztian/poc-setups/suites/java-security-all.qls@main,
-#          zbazztian/poc-setups/suites/javascript-security-all.qls@main
+        packs:
+          java:
+            - ghas-trials/java-queries:codeql-suites/java-security-all.qls
+            - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
+          javascript:
+            - ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls
+            - ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2

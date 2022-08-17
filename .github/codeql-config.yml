@@ -1,11 +1,2 @@
-name: "Custom Code Scanning Configuration"
-
+name: "Don't run the default language query packs"
 disable-default-queries: true
-
-packs:
-  java:
-    - ghas-trials/java-queries:codeql-suites/java-security-all.qls
-    - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
-  javascript:
-    - ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls
-    - ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
