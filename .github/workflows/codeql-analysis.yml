@@ -42,14 +42,12 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         debug: true
-        config-file: .github/codeql-config.yml
-        packs:
-          java:
-            - ghas-trials/java-queries:codeql-suites/java-security-all.qls
-            - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
-          javascript:
-            - ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls
-            - ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
+        config-file: .github/disable-default-queries.yml
+        packs: >
+          ghas-trials/java-queries:codeql-suites/java-security-all.qls,
+          ghas-trials/java-queries:codeql-suites/java-security-experimental.qls,
+          ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls,
+          ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
