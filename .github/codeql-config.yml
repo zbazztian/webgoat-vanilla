@@ -1,4 +1,4 @@
-name: "My CodeQL config"
+name: "Custom Code Scanning Configuration"
 
 disable-default-queries: true
 
