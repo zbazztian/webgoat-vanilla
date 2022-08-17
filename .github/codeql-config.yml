@@ -7,5 +7,5 @@ packs:
     - ghas-trials/java-queries:codeql-suites/java-security-all.qls
     - ghas-trials/java-queries:codeql-suites/java-security-experimental.qls
   javascript:
-    - ghas-trials/javascript-queries:codeql-suites/javascript-all.qls
+    - ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls
     - ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
