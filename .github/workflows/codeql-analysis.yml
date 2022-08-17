@@ -44,10 +44,8 @@ jobs:
         debug: true
         config-file: .github/disable-default-queries.yml
         packs: >
-          ghas-trials/java-queries:codeql-suites/java-security-all.qls,
-          ghas-trials/java-queries:codeql-suites/java-security-experimental.qls,
-          ghas-trials/javascript-queries:codeql-suites/javascript-security-all.qls,
-          ghas-trials/javascript-queries:codeql-suites/javascript-security-experimental.qls
+          ghas-trials/java-queries:codeql-suites/${{ matrix.language }}-security-all.qls,
+          ghas-trials/java-queries:codeql-suites/${{ matrix.language }}-security-experimental.qls
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
