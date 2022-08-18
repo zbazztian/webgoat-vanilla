@@ -34,7 +34,7 @@ jobs:
       if: matrix.language == 'java'
 
     - name: Delombok
-      uses: zbazztian/delombok@main
+      uses: ghas-trials/delombok@main
       if: matrix.language == 'java'
 
     - name: Initialize CodeQL
