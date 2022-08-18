@@ -41,7 +41,7 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        queries: zbazztian/poc-setups/suites/${{ matrix.language }}-security-all.qls@main
+        queries: ghas-trials/poc-setups/suites/${{ matrix.language }}-security-all.qls@main
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
