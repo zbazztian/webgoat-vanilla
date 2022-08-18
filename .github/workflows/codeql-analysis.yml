@@ -42,8 +42,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         debug: true
-        queries:
-          - zbazztian/poc-setups/suites/${{ matrix.language }}-security-all.qls
+        queries: zbazztian/poc-setups/suites/${{ matrix.language }}-security-all.qls
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
