@@ -42,10 +42,8 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         debug: true
-        config-file: advanced-security/config/disable-default-queries@true
-        packs: >
-          ghas-trials/${{ matrix.language }}-queries:codeql-suites/${{ matrix.language }}-security-all.qls,
-          ghas-trials/${{ matrix.language }}-queries:codeql-suites/${{ matrix.language }}-security-experimental.qls
+        queries:
+          - zbazztian/poc-setups/suites/${{ matrix.language }}-security-all.qls
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
@@ -53,4 +51,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
-
